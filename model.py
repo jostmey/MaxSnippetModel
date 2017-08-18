@@ -42,8 +42,10 @@ class MaxSnippetModel:
       features: `3D` Tensor, the features for each instance of every sample.
       counts `2D` Tensor, the number of times each instance appears in a sample.
     Returns:
-      - `2D` Tensor, logits of the sigmoid function for every replica and sample.
-      - `2D` Tensor, probabilities for every replica and sample.
+      - `2D` Tensor, logits of the sigmoid function. The first dimension covers
+        every sample. The second dimension covers every replica.
+      - `2D` Tensor, probability of positive diagnosis. The first dimension covers
+        every sample. The second dimension covers every replica.
     """
 
     # Settings
@@ -74,8 +76,8 @@ class MaxSnippetModel:
   def costs(self, logits, labels):
     """
     Args:
-      logits: `2D` Tensor, logits of the sigmoid function for every replica and
-        sample.
+      logits: `2D` Tensor, logits of the sigmoid function. The first dimension
+        covers every sample. The second dimension covers every replica.
       labels `1D` Tensor, the label for each sample.
     Returns:
       - `1D` Tensor, error between the model and labels across every replica.
@@ -96,7 +98,8 @@ class MaxSnippetModel:
     """
     Args:
       probabilities: `2D` Tensor, probability assigned by the model of a positive
-        diagnosis for every replica and sample.
+        diagnosis. The first dimension covers every sample. The second dimension
+        covers every replica.
       labels `1D` Tensor, the label for each sample.
     Returns:
       - `1D` Tensor, fraction of times the model prediction is correct for every
