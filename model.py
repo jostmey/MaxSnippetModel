@@ -12,7 +12,7 @@ class MaxSnippetModel:
   """Statistical model for classifying repertoire data"""
 
   def __init__(self, num_features, num_replicas=1):
-    """Initialize the RWA cell.
+    """
     Args:
       num_features: int, Number of features in each instance.
       num_replicas (optional): int, Number of copies of the model to fit the training
