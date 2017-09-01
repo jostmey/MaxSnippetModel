@@ -8,5 +8,5 @@
 
 ## Download
 
-* Download: [zip](https://github.com/jostmey/rwa/zipball/master)
-* Git: `git clone https://github.com/jostmey/rwa`
+* Download: [zip](https://github.com/jostmey/MaxSnippetModel/zipball/master)
+* Git: `git clone https://github.com/jostmey/MaxSnippetModel`
