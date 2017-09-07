@@ -63,9 +63,9 @@ class MaxSnippetModel:
 
     # Aggregate scores
     #
-    counts_expand = tf.expand_dims(counts, 2)
+    counts_expand = tf.expand_dims(counts, axis=2)
     penalties = -1E12*(1.0-tf.sign(counts_expand))  # No penalty if counts > 0. The penalty is -1E12 when counts are zero.
-    logits = tf.reduce_max(scores+penalties, 1)
+    logits = tf.reduce_max(scores+penalties, axis=1)
 
     return logits
 
@@ -81,12 +81,12 @@ class MaxSnippetModel:
 
     # Tile inputs over every replica
     #
-    labels_expand = tf.expand_dims(labels, 1)
+    labels_expand = tf.expand_dims(labels, axis=1)
     labels_tile = tf.tile(labels_expand, [1, self.num_replicas])
 
     # Cost function
     #
-    costs = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=logits, labels=labels_tile), 0)
+    costs = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=logits, labels=labels_tile), axis=0)
 
     return costs
 
@@ -107,13 +107,13 @@ class MaxSnippetModel:
 
     # Tile inputs over every replica
     #
-    labels_expand = tf.expand_dims(labels, 1)
+    labels_expand = tf.expand_dims(labels, axis=1)
     labels_tile = tf.tile(labels_expand, [1, self.num_replicas])
 
     # Accuracy function
     #
-    correct = tf.equal(tf.cast(tf.round(labels_tile), tf.float32), tf.cast(tf.round(probabilities), tf.float32))
-    accuracies = tf.reduce_mean(tf.cast(correct, tf.float32), 0)
+    correct = tf.equal(tf.round(labels_tile), tf.round(probabilities))
+    accuracies = tf.reduce_mean(tf.cast(correct, tf.float32), axis=0)
 
     return accuracies
 
