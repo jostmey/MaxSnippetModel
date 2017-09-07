@@ -53,9 +53,9 @@ labels = tf.placeholder(tf.float32, [batch_size])
 # Repertoire model
 #
 models = MaxSnippetModel(num_features, num_replicas=num_replicas)
-logits, probabilities = models(features, counts)
+logits = models(features, counts)
 costs = models.costs(logits, labels)
-accuracies = models.accuracies(probabilities, labels)
+accuracies = models.accuracies(logits, labels)
 
 # Select replica with best fit to the training data
 #
