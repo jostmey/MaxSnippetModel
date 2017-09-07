@@ -67,11 +67,7 @@ class MaxSnippetModel:
     penalties = -1E12*(1.0-tf.sign(counts_expand))  # No penalty if counts > 0. The penalty is -1E12 when counts are zero.
     logits = tf.reduce_max(scores+penalties, 1)
 
-    # Probabilities
-    #
-    probabilities = tf.nn.sigmoid(logits)
-
-    return logits, probabilities
+    return logits
 
   def costs(self, logits, labels):
     """
@@ -94,17 +90,20 @@ class MaxSnippetModel:
 
     return costs
 
-  def accuracies(self, probabilities, labels):
+  def accuracies(self, logits, labels):
     """
     Args:
-      probabilities: `2D` Tensor, probability assigned by the model of a positive
-        diagnosis. The first dimension covers every sample. The second dimension
-        covers every replica.
+      probabilities: `2D` Tensor, logits of the sigmoid function. The first dimension
+        covers every sample. The second dimension covers every replica.
       labels `1D` Tensor, the label for each sample.
     Returns:
       - `1D` Tensor, fraction of times the model prediction is correct for every
         replica.
     """
+
+    # Compute probabilities
+    #
+    probabilities = tf.sigmoid(logits)
 
     # Tile inputs over every replica
     #
