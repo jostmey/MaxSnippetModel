@@ -59,9 +59,9 @@ labels = tf.placeholder(tf.float32, [batch_size])
 models = MaxSnippetModel(num_features)
 models.weights = tf.Variable(weights_bestfit, name='weights', dtype=tf.float32)
 models.biases = tf.Variable(bias_bestfit, name='biases', dtype=tf.float32)
-logits, probabilities = models(features, counts)
+logits = models(features, counts)
 cost = models.costs(logits, labels)
-accuracy = models.accuracies(probabilities, labels)
+accuracy = models.accuracies(logits, labels)
 
 # Create operator to initialize session
 #
