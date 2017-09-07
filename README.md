@@ -11,7 +11,7 @@ The main idea is to score every snippet by its biochemical features with a decte
 
 The model is fitted to the training data using gradient based optimization techniques. First, initial values are randomly drawn for each parameter. Then 2,500 steps of gradient based optimization are used to find a locally optimal fit to the data. We find that the fitting procedure must be repeated hundreds of thousands of times to find a good fit to the training data.
 
-For a complete description of this work, see our publication:
+For a complete description of this approach, see our publication:
 
  * [BMC Bioinformatics](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1814-6)
 
