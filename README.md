@@ -9,7 +9,7 @@ First, the CDR3 is parsed from every antibody sequence in a patient (see [VDJ Se
 
 The main idea is to score every snippet by its biochemical features with a dectector function and to aggregate the scores into a single value that can represent a diagnosis. Because only a handful of snippets are expected to have a high score in patients with a disease, we aggregate the scores together by taking the maximum score. The maximum score is then used to predict the probability that a patient has a positive diagnosis (a high score would suggest a positive diagnosis, no high scores would suggest a negative diagnosis). The parameters of the detector function are fitted by maximizing the log-likelihood (minimizing the cross-entropy error) that each diagnosis is correct.
 
-The model is fitted to the training data using gradient descent-based optimization techniques. First, initial values are randomly drawn for each parameter. Then 2,500 steps of gradient descent-based optimization are used to find a locally optimal fit to the data. We find that the fitting procedure must be repeated hundreds of thousands of times to find a good fit to the training data.
+The model is fitted to the training data using gradient based optimization techniques. First, initial values are randomly drawn for each parameter. Then 2,500 steps of gradient based optimization are used to find a locally optimal fit to the data. We find that the fitting procedure must be repeated hundreds of thousands of times to find a good fit to the training data.
 
 For a complete description of this work, see our publication:
 
