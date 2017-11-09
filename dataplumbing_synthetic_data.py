@@ -30,14 +30,15 @@ def process_repertoires(repertoires, snip_size=6):
   #
   # Assume this is your CDR3:
   #  ACTRGHKCILR
-  # The snippets of k-mers are:
+  # The snippets are:
   #  ACTRGH     
   #   CTRGH     
   #    TRGHKC   
   #     RGHKCI  
   #      GHKCIL 
   #       HKCILR
-  # This must be done for every CDR3
+  # This must be done for every CDR3 in the sample. After conveting the snippets
+  # into a vector representation (Atchley factors), the values are stored in "xs".
 
   # Data dimensions
   #
