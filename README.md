@@ -31,4 +31,5 @@ For a complete description of this approach, see our publication in BMC Bioinfor
  * model.py
  * train.py
  * score.py
- * Data used to develop the approach cannot be made available at this time
+ * dataplumbing.py (Data used to develop the approach cannot be made available at this time)
+ * dataplumbing_synthetic_data.py (Overwrite dataplumbing.py with this file to see how the model performs on synthetic data)
