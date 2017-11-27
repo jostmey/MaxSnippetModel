@@ -23,10 +23,10 @@ def process_repertoires(repertoires, snip_size=6):
   # This script creates a set of random of snippets (k-mers) for each sample.
   # If this were real data from immune receptor sequences, you would take each
   # CDR3 sequence in a sample, cut it up into every possible snippet (k-mer),
-  # and use those snippets (see example). The snippet count would be the total number of
+  # and use those snippets (see EXAMPLE below). The snippet count would be the total number of
   # times the snippet appeared in all of the CDR3 sequences from a sample.
   #
-  # EXAPLE:
+  # EXAMPLE:
   #
   # Assume this is your CDR3:
   #  ACTRGHKCILR
