@@ -38,5 +38,5 @@ For a complete description of this approach, see our publication in BMC Bioinfor
 
 Improved repertoire classification models are published under:
   * [Max Snippet Model for Ovarian Cancer](https://www.github.com/jostmey/MaxSnippetModelOvarian)
-  * [Dynamic Kernel Matching](https://www.github.com/jostmey/DKM)
+  * [Dynamic Kernel Matching](https://www.github.com/jostmey/dkm)
 
