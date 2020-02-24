@@ -1,3 +1,5 @@
+[*Click here for my new approach for classifying sequences and other non-conforming data called Dynamic Kernel Matching*](https://github.com/jostmey/dkm)
+
 # Statistical classifiers for diagnosing disease from immune repertoires
 ###### LABORATORY OF DR. LINDSAY COWELL
 
