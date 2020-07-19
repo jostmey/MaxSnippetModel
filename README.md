@@ -20,7 +20,7 @@ For a complete description of this approach, see our publication in BMC Bioinfor
 ## Requirements
 
  * [Python3](https://www.python.org/)
- * [TensorFlow](https://www.tensorflow.org/)
+ * [TensorFlow v1.0](https://www.tensorflow.org/)
  * [NumPy](http://www.numpy.org/)
 
 ## Download
