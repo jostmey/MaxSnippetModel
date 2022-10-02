@@ -1,4 +1,4 @@
-[*Click here for our improved statistical classifier for immune repertoires, Dynamic Kernel Matching*](https://github.com/jostmey/dkm)
+[*Click here for our improved statistical classifier for immune repertoires*](https://github.com/jostmey/msm)
 
 # Statistical classifiers for diagnosing disease from immune repertoires
 ###### LABORATORY OF DR. LINDSAY COWELL
